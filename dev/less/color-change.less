@@ -1,0 +1,120 @@
+body{
+	font-family: @font;
+}
+.page {
+	display: flex;
+	flex-direction: column;
+	height: 650px;
+	width: 100%;
+	height: 100%;
+}
+//==========================================================
+.text__title {
+	padding-bottom: 20px;
+	font-size: 50px;
+	font-weight: 800;
+	line-height: 120%;
+	span{
+		font-size: 36px;
+	}
+
+	@media (max-width: 768px) {
+		font-size: 42px;
+	}
+	@media (max-width: 425px) {
+		font-size: 36px;
+	}
+}
+.text__text {
+	font-size: 24px;
+	color: rgb(122, 122, 122);
+	margin-bottom: 20px;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+	@media (max-width: 425px) {
+		font-size: 18px;
+	}
+}
+
+//==========================================================
+.block_game {
+	flex: 1 1 auto;
+}
+.game__border{
+	display:none;
+	max-width: 450px;
+	height: 500px;
+	border: 10px solid #000;
+	border-radius: 15px;
+	margin: 0 auto;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-bottom: 50px;
+	border-radius: 10%;
+
+	@media (max-width: 768px) {
+		height: 350px;
+		border: 8px solid #000;
+	}
+	@media (max-width: 425px) {
+		height: 300px;
+		border: 5px solid #000;
+	}
+}
+
+//====================================================================================================================
+.page.__result {
+	display: none;
+}
+.body__result {
+	flex: 1 0 auto;
+	margin-top: 100px;
+}
+.result__body {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.result__block{
+	flex: 1 0 80%;
+}
+.result__title {
+	font-size: 36px;
+	line-height: 150%;
+	font-weight: 600;
+
+	@media (max-width: 768px) {
+		font-size: 24px;
+	}
+	@media (max-width: 425px) {
+		font-size: 18px;
+	}
+}
+.result__text {
+	font-size: 24px;
+	color: rgb(82, 82, 82);
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+	@media (max-width: 425px) {
+		font-size: 16px;
+	}
+}
+.result__value {
+	flex: 1 0 20%;
+	font-size: 35px;
+	font-weight: 800;
+	align-self: center;
+	padding-left: 20px;
+
+	@media (max-width: 768px) {
+		font-size: 20px;
+	}
+	@media (max-width: 425px) {
+		font-size: 16px;
+	}
+}

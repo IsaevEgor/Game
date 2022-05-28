@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Поймай цвет</title>
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<!-- <style>body{opacity: 0;}</style> -->
+		<link rel="stylesheet" href="css/main.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+		<!-- <meta name="robots" content="noindex, nofollow"> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+	<body>
+		<div class="wrapper">
+			<main id="gamePageCatchColor" class="page __game __container">
+				<div class="block__text">
+					<div class="text__title">
+						<h1>Смена цвета.</h1>
+					</div>
+					<div class="text__text">
+						<p>Нажимайте на рамку, как только меняется цвет, как можно быстрее.</p>
+					</div>
+				</div>
+				<div class="block__timer">
+					<div id="timerCatchColor" class="timer">00:00</div>
+				</div>
+				<div class="block_game">
+					<div id="gameBlock" class="cath_color__grid">
+						<item id="item-1" class="cath_color-item deactive"></item>
+						<item id="item-2" class="cath_color-item deactive"></item>
+						<item id="item-3" class="cath_color-item deactive"></item>
+						<item id="item-4" class="cath_color-item deactive"></item>
+						<item id="item-5" class="cath_color-item deactive"></item>
+						<item id="item-6" class="cath_color-item deactive"></item>
+						<item id="item-7" class="cath_color-item deactive"></item>
+						<item id="item-8" class="cath_color-item deactive"></item>
+						<item id="item-9" class="cath_color-item deactive"></item>
+					</div>
+				</div>
+				<div class="block_button">
+					<a id="startCatchColor" class="button">Начать!</a>
+					<a href="index.html" class="button">
+						На главную
+					</a>
+				</div>
+			</main>
+			<main id="resultPageCatchColor" class="page __result __container">
+					<div class="text__title">
+						Результат:
+						<br> <span>Сравнение Цифр</span>
+					</div>
+					<div class="body__result">
+						<div class="result__body">
+							<div class="result__block">
+								<div class="result__title">
+									Время реакции (миллисек):
+								</div>
+								<div class="result__text">
+									Минимальный лимит для прохождения 460 миллисекунд.
+								</div>
+							</div>
+							<div id="reactioneCatchColor" class="result__value">Считаем...</div>
+						</div>
+						<div class="result__body">
+							<div class="result__block">
+								<div class="result__title">
+									Процент Ошибочных действий:
+								</div>
+								<div class="result__text">
+									Колличество допущенных ошибок должно быть не больше 17%
+								</div>
+							</div>
+							<div id="procentCatchColor" class="result__value">Считаем...</div>
+						</div>
+					</div>
+					<div class="block_button">
+						<a id="restart" onClick="window.location.reload()" class="button">
+							Повтор
+						</a>
+						<a href="index.html" class="button">
+							На главную
+						</a>
+					</div>
+			</main>
+		</div>
+		<script src="js/color-catch.js"></script>
+	</body>
+</html>
