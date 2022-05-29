@@ -18,7 +18,7 @@ function minMaxGame() {
 }
 
 function showTimer(to) {
-	let current = 3;
+	let current = 30;
 
 	function go() {
 		timerMinMax.innerHTML = "00:" + current;
