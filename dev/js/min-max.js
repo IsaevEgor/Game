@@ -18,7 +18,7 @@ function minMaxGame() {
 }
 
 function showTimer(to) {
-	let current = 30;
+	let current = 3;
 
 	function go() {
 		timerMinMax.innerHTML = "00:" + current;
@@ -113,7 +113,7 @@ function compareSecond() {
 function showResult() {
 	reaction = mlsArr.reduce((sum, item) => sum + item, 0);
 	reaction /= mlsArr.length;
-	reactioneMinMax.innerHTML = reaction + ' ms';
+	reactioneMinMax.innerHTML = Math.floor(reaction) + ' ms';
 
 	procent = fail / allClick * 100;
 	procentMinMax.innerHTML = Math.floor(procent) + ' %';
