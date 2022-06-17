@@ -51,15 +51,11 @@ function colorChenge() {
 		timeStart = performance.now();
 
 		function clickWhite() {
-			if (border.style.backgroundColor == "slateblue") {
-				border.style.backgroundColor = "white";
+			if (border.style.backgroundColor = "slateblue") {
+				border.style.backgroundColor = "rgba(255, 255, 255, 0)";
 				timeStop = performance.now();
 				timeResult = timeStop-timeStart;
 				timeArr.push(Math.floor(timeResult));
-				border.style.backgroundColor = "rgba(0, 255, 64, 0.274)";
-				setTimeout(() => {
-					border.style.backgroundColor = "white";
-				}, 100);
 			}
 		};
 
@@ -86,12 +82,8 @@ function colorChenge() {
 
 	if(border.style.backgroundColor != "slateblue") {
 		fail += 1;
-		border.style.backgroundColor = "rgba(255, 60, 60, 0.247)";
-		setTimeout(() => {
-			border.style.backgroundColor = "white";
-		}, 100);
 	} else {
-		fail += 0;
+		fail += 0; 
 	}
 
 	console.log(fail)

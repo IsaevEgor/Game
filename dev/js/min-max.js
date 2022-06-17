@@ -113,7 +113,7 @@ function compareSecond() {
 function showResult() {
 	reaction = mlsArr.reduce((sum, item) => sum + item, 0);
 	reaction /= mlsArr.length;
-	reactioneMinMax.innerHTML = Math.floor(reaction) + ' ms';
+	reactioneMinMax.innerHTML = reaction + ' ms';
 
 	procent = fail / allClick * 100;
 	procentMinMax.innerHTML = Math.floor(procent) + ' %';
