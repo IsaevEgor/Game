@@ -26,7 +26,7 @@ function start() {
 
 function showTimer(to) {
 	timer.style.display = "block";
-	let current = 1;
+	let current = 30;
 
 	function go() {
 		timer.innerHTML = "00:" + current;
