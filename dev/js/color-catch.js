@@ -37,7 +37,7 @@ function startCathColor() {
 };
 
 function showTimer(to) {
-	let current = 30;
+	let current = 1;
 
 	function go() {
 		timerCatchColor.innerHTML = "00:" + current;
