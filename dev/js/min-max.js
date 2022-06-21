@@ -81,6 +81,10 @@ function compareFirst() {
 		setTimeout(() => {
 			firstNum.style.backgroundColor = "";
 		}, 100);
+		timerMinMax.classList.add("__ok")
+		setTimeout(() => {
+			timerMinMax.classList.remove("__ok")
+		}, 150);
 		innerNum();
 	} else {
 		fail += 1;
@@ -88,6 +92,10 @@ function compareFirst() {
 		setTimeout(() => {
 			firstNum.style.backgroundColor = "";
 		}, 100);
+		timerMinMax.classList.add("__no")
+		setTimeout(() => {
+			timerMinMax.classList.remove("__no")
+		}, 150);
 	};
 };
 function compareSecond() {
@@ -97,9 +105,13 @@ function compareSecond() {
 		mlsStop = performance.now()
 		mlsArr.push(Math.floor(mlsStop - mlsStart));
 		secondNum.style.backgroundColor = "rgba(0, 255, 64, 0.274)";
+		timerMinMax.classList.add("__ok")
 		setTimeout(() => {
 			secondNum.style.backgroundColor = "";
 		}, 100);
+		setTimeout(() => {
+			timerMinMax.classList.remove("__ok")
+		}, 150);
 		innerNum();
 	} else {
 		fail += 1;
@@ -107,16 +119,34 @@ function compareSecond() {
 		setTimeout(() => {
 			secondNum.style.backgroundColor = "";
 		}, 100);
+		timerMinMax.classList.add("__no")
+		setTimeout(() => {
+			timerMinMax.classList.remove("__no")
+		}, 150);
 	};
 };
 
 function showResult() {
 	reaction = mlsArr.reduce((sum, item) => sum + item, 0);
 	reaction /= mlsArr.length;
+	reaction = Math.floor(reaction);
 	reactioneMinMax.innerHTML = reaction + ' ms';
 
 	procent = fail / allClick * 100;
-	procentMinMax.innerHTML = Math.floor(procent) + ' %';
+	procent = Math.floor(procent)
+	procentMinMax.innerHTML = procent + ' %';
+
+	showText(reaction, procent)
+}
+
+function showText(reaction, procent) {
+	if (procent > 17 || reaction > 850) {
+		let imgNo = document.getElementById("imgNo");
+		imgNo.style.display = "block";
+	} else {
+		let imgOk = document.getElementById("imgOk");
+		imgOk.style.display = "block";
+	}
 }
 
 startMinMaxGame.addEventListener("click", minMaxGame);

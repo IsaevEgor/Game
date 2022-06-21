@@ -135,23 +135,45 @@ function showVariant() {
 
 function countError(n) {
 	if (n == countCorrect) {
+		timer.classList.add("__ok")
+		setTimeout(() => {
+			timer.classList.remove("__ok")
+		}, 150);
+
 		mlsStop = performance.now()
 		mlsArr.push(Math.floor(mlsStop - mlsStart))
 		allFail++
 		startColor();
 		showVariant();
 	} else {
+		timer.classList.add("__no")
+		setTimeout(() => {
+			timer.classList.remove("__no")
+		}, 150);
+	
 		allFail++;
 		fail++;
 	}
 }
 function showResult() {
+	let reactioneResult;
+	let procentResult;
+
 	let reactionValue;
 
-	procent.innerHTML = Math.floor(fail / allFail *100) + " %";
+	procentResult = Math.floor(fail / allFail *100);
+	procent.innerHTML = procentResult + " %";
 
 	reactionValue = mlsArr.reduce((sum, current) => sum + current, 0)
-	reactione.innerHTML = Math.floor(reactionValue / mlsArr.length) + " ms"
+	reactioneResult = Math.floor(reactionValue / mlsArr.length)
+	reactione.innerHTML = reactioneResult + " ms"
+	if (procentResult > 7 || reactioneResult > 1760) {
+		let imgNo = document.getElementById("imgNo");
+		imgNo.style.display = "block";
+	} else {
+		let imgOk = document.getElementById("imgOk");
+		imgOk.style.display = "block";
+	}
 }
 startGame.addEventListener("click", start);
 

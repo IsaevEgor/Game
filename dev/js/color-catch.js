@@ -76,6 +76,11 @@ function randomColor() {
 			mlsArr.push(Math.floor(mlsStop - mlsStart));
 			console.log(mlsArr)
 			okClick += 1;
+			timerCatchColor.classList.add("__ok")
+			setTimeout(() => {
+				timerCatchColor.classList.remove("__ok")
+			}, 350);
+
 			failClick -= 1;
 			item.style.backgroundColor = "";
 			item.classList.remove("active")
@@ -83,7 +88,6 @@ function randomColor() {
 			randomColor();
 		}
 	}
-
 }
 
 let allItem = document.getElementsByClassName('deactive')
@@ -91,7 +95,7 @@ let allClick = 0;
 let failClick = 0;
 
 for (let i = 0; i < allItem.length; i++) {
-	allItem[i].onclick = function() {
+	allItem[i].onmousedown  = function() {
 		if (allItem[i].classList.contains("deactive")) {
 			failClick += 1;
 		}
@@ -103,7 +107,8 @@ for (let i = 0; i < allItem.length; i++) {
 function showResult() {
 	let reaction = mlsArr.reduce((sum, current) => sum + current, 0);
 	reaction /= mlsArr.length;
-	reactioneCatchColor.innerHTML = Math.floor(reaction) + "ms";
+	reaction = Math.floor(reaction)
+	reactioneCatchColor.innerHTML = reaction + "ms";
 
 	let procent = Math.floor(failClick / allClick *100);
 	if (procent < 0) {
@@ -111,8 +116,17 @@ function showResult() {
 	} else {
 		procentCatchColor.innerHTML = procent + "%";
 	}
+	showText(reaction, procent)
+}
+
+function showText(reaction, procent) {
+	if (procent > 17 || reaction > 460) {
+		let imgNo = document.getElementById("imgNo");
+		imgNo.style.display = "block";
+	} else {
+		let imgOk = document.getElementById("imgOk");
+		imgOk.style.display = "block";
+	}
 }
 
 startCatchColor.addEventListener("click", startCathColor);
-//startCatchColor.addEventListener("click", randomColor);
-//startCatchColor.addEventListener("click", showTimer);
