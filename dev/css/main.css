@@ -53,6 +53,9 @@
   border: 3px solid #000;
   border-radius: 10px
 }
+.cath_color-item:active {
+  background-color: rgba(126,126,126,.178)
+}
 body {
   font-family: Roboto
 }
@@ -131,6 +134,9 @@ body {
     height: 300px;
     border: 5px solid #000
   }
+}
+.game__border:active {
+  background-color: rgba(126,126,126,.178)
 }
 .game__body {
   display: none;
@@ -215,9 +221,11 @@ body {
   border-radius: 15px;
   cursor: pointer;
   -webkit-transition: .3s ease;
-  transition: .3s ease
+  transition: .3s ease;
+  -webkit-tap-highlight-color: rgba(255,255,255,0);
+  -webkit-tap-highlight-color: transparent
 }
-.button__item:hover {
+.button__item:active {
   background-color: #9c9c9c
 }
 .button__item:not(:last-child) {
@@ -601,7 +609,7 @@ h6 {
 .__ok::after {
   position: absolute;
   top: 10px;
-  right: -30px;
+  right: -35px;
   content: '';
   width: 35px;
   height: 35px;
@@ -626,7 +634,7 @@ h6 {
 .__no::after {
   position: absolute;
   top: 10px;
-  right: -30px;
+  right: -35px;
   content: '';
   width: 35px;
   height: 35px;
