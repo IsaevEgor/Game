@@ -27,7 +27,7 @@
 .button:not(:last-child) {
   margin-right: 15px
 }
-.button:hover {
+.button:active {
   background-color: #5c5c5c
 }
 .cath_color__timer {
